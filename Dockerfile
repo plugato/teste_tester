@@ -23,9 +23,9 @@ RUN echo "no" | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager --verbose crea
 
 
 RUN npm install envinfo detox-cli --global && \
-    envinfo && \
-    npm install expo-cli && \
-    npm install
+    envinfo  
+
+RUN npm install
 
 ENV PATH="/app/node_modules/.bin:${PATH}"
 

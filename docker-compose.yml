@@ -10,12 +10,14 @@ services:
     privileged: true # Necessário para acesso ao ADB
     volumes:
       - .:/app
+      ##- /app/node_modules # Exclui a pasta node_modules do volume
+      #- /app/android/app/build
+      #- /app/android/app/.gradle
     working_dir: /app
     command: >
       sh -c '
       npm install &&
-      npm start &
-      sleep 1 &&
+      npm start &  
       detox build -c android.emu.debug &&
       detox test -c android.emu.debug --headless --gpu swiftshader_indirect --take-screenshots all --record-videos all -l trace
       '
