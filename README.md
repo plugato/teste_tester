@@ -1,6 +1,6 @@
 # Aplicacao de teste usando DETOX https://wix.github.io/Detox/
 
-## Running
+## Running local
 
 ### Build APK
 
@@ -12,3 +12,7 @@
     yarn start
 
     detox test --configuration android.emu.debug  --take-screenshots all --record-videos all
+
+## Running docker
+
+    docker compose up
